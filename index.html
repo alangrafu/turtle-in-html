@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+There is a turtle around here.... <a href='#' id='button' onclick='TurtleHTML.findTurtle();'>find the turtle!</a>
+
+
+<script type="text/turtle">
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix admin: <http://webns.net/mvcb/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://alvaro.graves.cl>
+    a foaf:Person ;
+    owl:sameAs <http://tw.rpi.edu/instances/AlvaroGraves> ;
+    foaf:depiction <http://tw.rpi.edu/wiki.tw/images/2/21/Alvaro.jpg> ;
+    foaf:family_name "Graves" ;
+    foaf:givenname "Alvaro" ;
+    foaf:homepage <http://graves.cl> ;
+    foaf:mbox_sha1sum "eb9d132d69d7bbd35b842e3d62b0d763e87f5ea9" ;
+    foaf:name "Alvaro Graves" ;
+    foaf:nick "Al" ;
+    foaf:schoolHomepage <http://rpi.edu> ;
+    foaf:title "Mr." ;
+    foaf:workInfoHomepage <http://tw.rpi.edu/web/person/AlvaroGraves> ;
+    foaf:workplaceHomepage <http://tw.rpi.edu> .
+
+<http://alvaro.graves.cl/foaf>
+    admin:errorReportsTo <mailto:leigh@ldodds.com> ;
+    admin:generatorAgent <http://www.ldodds.com/foaf/foaf-a-matic> ;
+    a foaf:PersonalProfileDocument ;
+    foaf:maker <http://alvaro.graves.cl> ;
+    foaf:primaryTopic <http://alvaro.graves.cl> .
+
+
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="turtle-html.js"></script>
+<script src="turtle-parser.js"></script>
+
+</body>
+
+</html>

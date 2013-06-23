@@ -1,0 +1,33 @@
+.__turtlecontainer{
+	position:absolute; 
+	top:100px;
+	left:200px;
+	hidden;
+	z-index: 9999;
+	background: #555555;
+	box-shadow: 10px 10px 5px #888888;
+	border-radius: 15px;
+	font-size: 14px;
+	font-family:sans-serif;
+	margin-bottom;display:inline;
+}
+
+.__turtleheader{
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background:steelblue;
+	display:block;
+	color:white;
+	cursor:move;
+	padding:5px;
+}
+
+.__turtlelink{
+	text-decoration: none;
+	color: steelblue;
+}
+
+.turtletd{
+	padding: 5px;
+	border: 1px solid black;
+}
