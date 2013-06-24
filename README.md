@@ -14,7 +14,7 @@ Nowadays it is possible to embed RDF in Turtle [1], however it is not easy to se
 Simply go to http://graves.cl/turtle-in-html/ and add the link in your bookrmark. Later, in a page containing turtle (such as http://graves.cl/turtle-in-html/), you can click on that bookmark and you'll see the triples.
 # Known bugs
 
-Currently it only works in Firefox
+Currently it only works in Firefox and Chrome and hasn't been tested in other browsers. Feel free to report any bugs.
 
 # License
 
