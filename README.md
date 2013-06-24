@@ -8,6 +8,10 @@ Nowadays it is possible to embed RDF in Turtle [1], however it is not easy to se
 2. http://nytimes.github.io/svg-crowbar/
 3. http://www.kanzaki.com/works/2006/misc/0308turtle.html
 
+
+# Installation and use
+
+Simply go to http://graves.cl/turtle-in-html/ and add the link in your bookrmark. Later, in a page containing turtle (such as http://graves.cl/turtle-in-html/), you can click on that bookmark and you'll see the triples.
 # Known bugs
 
 Currently it only works in Firefox
