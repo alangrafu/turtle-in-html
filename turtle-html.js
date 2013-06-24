@@ -1,11 +1,36 @@
-TurtleHTML = {
-  findTurtle: function(){
-     var fileref=document.createElement("link");
-  fileref.setAttribute("rel", "stylesheet");
-  fileref.setAttribute("type", "text/css");
-  fileref.setAttribute("href", "style.css");
-  document.getElementsByTagName("head")[0].appendChild(fileref);
-   var self = this;
+
+function loadjq(){
+     var script = document.createElement('script');
+     script.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js";
+     script.onload=loadjqui;
+     document.getElementsByTagName('head')[0].appendChild(script);
+
+  }
+
+function loadjqui(){
+     var script = document.createElement('script');
+     script.src = "http://code.jquery.com/ui/1.10.3/jquery-ui.js";
+     script.onload=loadparser;
+     document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function loadparser(){
+     script = document.createElement('script');
+     script.src = "turtle-parser.js";
+     script.onload=loadcss;
+     document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+function loadcss(){
+     script = document.createElement('link');
+     script.href = "style.css";
+     script.rel = "stylesheet";
+     script.type = "text/css";
+     script.onload=findTurtle;
+     document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+  function findTurtle(){
    $table = $("#__turtletablebody");
    if($table.length == 0){
     $("body").append("<div id='__divturtle' class='__turtlecontainer'><div id='__turtleheader' class='__turtleheader'><span id='__triplecount'></span> triples found <a href='#' id='__closetable' style='font-size:120%;color: white; float:right;text-decoration:none;'>X</a></div><table id='__turtletable' style='padding:10px;width:100%;'><thead><tr><th>Subject</th><th>Predicate</th><th>Object</th></thead><tbody style='max-height:10px;overflow:scroll;' id='__turtletablebody'></tbody></table></div>");
@@ -21,25 +46,26 @@ TurtleHTML = {
   var data = parser.parse($turtle);
   $("#__triplecount").html(data.length);
   $.each(data, function(i, item){
-    o = (item.type=='resource')?"<a class='__turtlelink' href='"+item.object+"'>"+self.uri2curie(item.object)+"</a>":item.object;
-    p = self.uri2curie(item.predicate);
-    s = self.uri2curie(item.subject);
+    o = (item.type=='resource')?"<a class='__turtlelink' href='"+item.object+"'>"+uri2curie(item.object)+"</a>":item.object;
+    p = uri2curie(item.predicate);
+    s = uri2curie(item.subject);
     $results_table.append("<tr><td class='__turtletd'><a class='__turtlelink' href='"+s+"'>"+item.subject+"</a></td><td class='__turtletd'><a class='__turtlelink' href='"+item.predicate+"'>"+p+"</a></td><td class='__turtletd'>"+o+"</td></tr>");
   }); 
   $("#__divturtle").show(300);
-},
-  uri2curie: function(uri){
-  	var self = this;
-  	for (i in self.__ns){
-  		var regex = new RegExp(self.__ns[i],"g");
+}
+
+function uri2curie(uri){
+  	for (i in __ns){
+  		var regex = new RegExp(__ns[i],"g");
   		var n=uri.replace(regex, i+":");
   		if(n != uri){
   			return n;
   		}
   	}
   	return uri;
-  },
-  __ns: {"yago": "http://dbpedia.org/class/yago/",
+  }
+
+  var __ns = {"yago": "http://dbpedia.org/class/yago/",
   "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
   "foaf": "http://xmlns.com/foaf/0.1/",
   "dbp": "http://dbpedia.org/property/",
@@ -141,4 +167,5 @@ TurtleHTML = {
   "xf": "http://www.w3.org/2002/xforms/",
   "dbr": "http://dbpedia.org/resource/"
 }
-}
+
+window.onload=loadjq();

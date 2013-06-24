@@ -4,8 +4,10 @@
 <title></title>
 </head>
 <body>
-There is a turtle around here.... <a href='#' id='button' onclick='TurtleHTML.findTurtle();'>find the turtle!</a>
-
+<h2>There is a turtle around here....</h2>
+<p>Copy the following link in your bookmark. In a page containing RDF as Turtle, click on the new bookmark and you should be able to see a table with the triples.</p>
+<p><strong>Note: Currently works in Firefox only</strong></p>
+<a href='javascript:javascript: (function () { var e = document.createElement("script"); if (window.location.protocol === "https:") { e.setAttribute("src", "turtle-html.js"); } else { e.setAttribute("src", "turtle-html.js"); } document.body.appendChild(e);})();'>Find turtle in HTML</a>
 
 <script type="text/turtle">
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -39,10 +41,6 @@ There is a turtle around here.... <a href='#' id='button' onclick='TurtleHTML.fi
 
 </script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-<script src="turtle-html.js"></script>
-<script src="turtle-parser.js"></script>
 
 </body>
 
