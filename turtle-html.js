@@ -16,14 +16,14 @@ function loadjqui(){
 
 function loadparser(){
      script = document.createElement('script');
-     script.src = "turtle-parser.js";
+     script.src = "http://graves.cl/turtle-in-html/turtle-parser.js";
      script.onload=loadcss;
      document.getElementsByTagName('head')[0].appendChild(script);
 }
 
 function loadcss(){
      script = document.createElement('link');
-     script.href = "style.css";
+     script.href = "http://graves.cl/turtle-in-html/style.css";
      script.rel = "stylesheet";
      script.type = "text/css";
      script.onload=findTurtle;
